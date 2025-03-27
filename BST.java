@@ -1,8 +1,9 @@
 /**
  * COMP1039 - CW 1
  * @author  - Daokuan Wu (20614970)
- * @version - 2.3
- * @date    - 03/20/2025
+ * @version - 2.4
+ * @date    - 03/27/2025
+ * @github  - https://github.com/SouPuppy/BST (testing script included)
  */
 
 import java.io.*;
