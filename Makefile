@@ -13,13 +13,15 @@ recompile:
 	make clean
 	make compile
 
-test: recompile
-	java -Dfile.encoding=UTF-8 -XX:+UseSerialGC -Xss64m -Xms1920m -Xmx1920m BST < Input.txt > Output.txt
-	@diff -u Standard.txt Output.txt > diff_output.txt || (echo "⚠️  Error on line:" && grep -n "^-" diff_output.txt | head -n 1 | cut -d: -f1 && exit 1)
-	@if [ ! -s diff_output.txt ]; then echo "✅ Correct"; else echo "❌  Incorrect"; fi
-	rm -f diff_output.txt
-	make clean
+# test: recompile
+# 	java -Dfile.encoding=UTF-8 -XX:+UseSerialGC -Xss64m -Xms1920m -Xmx1920m BST < Input.txt > Output.txt
+# 	@diff -u Standard.txt Output.txt > diff_output.txt || (echo "⚠️  Error on line:" && grep -n "^-" diff_output.txt | head -n 1 | cut -d: -f1 && exit 1)
+# 	@if [ ! -s diff_output.txt ]; then echo "✅ Correct"; else echo "❌  Incorrect"; fi
+# 	rm -f diff_output.txt
+# 	make clean
 
+test:
+	bash test.sh
 
 time: recompile
 	python debug.py
